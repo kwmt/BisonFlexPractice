@@ -1,0 +1,224 @@
+Terminals which are not used
+
+   IF
+   NL
+   '+'
+   '-'
+   '*'
+   '/'
+   '^'
+   UMINUS
+
+
+Grammar
+
+    0 $accept: line $end
+
+    1 line: /* empty */
+    2     | stmnt
+
+    3 stmnt: expr ';'
+    4      | LHS expr ';'
+    5      | error ';'
+
+    6 LHS: ID
+
+    7 expr: expr '=' expr
+    8     | expr '>' expr
+    9     | ID
+   10     | NUM
+
+
+Terminals, with rules where they appear
+
+$end (0) 0
+'*' (42)
+'+' (43)
+'-' (45)
+'/' (47)
+';' (59) 3 4 5
+'=' (61) 7
+'>' (62) 8
+'^' (94)
+error (256) 5
+NUM (258) 10
+ID (259) 6 9
+IF (260)
+NL (261)
+UMINUS (262)
+
+
+Nonterminals, with rules where they appear
+
+$accept (16)
+    on left: 0
+line (17)
+    on left: 1 2, on right: 0
+stmnt (18)
+    on left: 3 4 5, on right: 2
+LHS (19)
+    on left: 6, on right: 4
+expr (20)
+    on left: 7 8 9 10, on right: 3 4 7 8
+
+
+state 0
+
+    0 $accept: . line $end
+
+    error  shift, and go to state 1
+    NUM    shift, and go to state 2
+    ID     shift, and go to state 3
+
+    $end  reduce using rule 1 (line)
+
+    line   go to state 4
+    stmnt  go to state 5
+    LHS    go to state 6
+    expr   go to state 7
+
+
+state 1
+
+    5 stmnt: error . ';'
+
+    ';'  shift, and go to state 8
+
+
+state 2
+
+   10 expr: NUM .
+
+    $default  reduce using rule 10 (expr)
+
+
+state 3
+
+    6 LHS: ID .
+    9 expr: ID .
+
+    NUM       reduce using rule 6 (LHS)
+    ID        reduce using rule 6 (LHS)
+    $default  reduce using rule 9 (expr)
+
+
+state 4
+
+    0 $accept: line . $end
+
+    $end  shift, and go to state 9
+
+
+state 5
+
+    2 line: stmnt .
+
+    $default  reduce using rule 2 (line)
+
+
+state 6
+
+    4 stmnt: LHS . expr ';'
+
+    NUM  shift, and go to state 2
+    ID   shift, and go to state 10
+
+    expr  go to state 11
+
+
+state 7
+
+    3 stmnt: expr . ';'
+    7 expr: expr . '=' expr
+    8     | expr . '>' expr
+
+    '='  shift, and go to state 12
+    '>'  shift, and go to state 13
+    ';'  shift, and go to state 14
+
+
+state 8
+
+    5 stmnt: error ';' .
+
+    $default  reduce using rule 5 (stmnt)
+
+
+state 9
+
+    0 $accept: line $end .
+
+    $default  accept
+
+
+state 10
+
+    9 expr: ID .
+
+    $default  reduce using rule 9 (expr)
+
+
+state 11
+
+    4 stmnt: LHS expr . ';'
+    7 expr: expr . '=' expr
+    8     | expr . '>' expr
+
+    '='  shift, and go to state 12
+    '>'  shift, and go to state 13
+    ';'  shift, and go to state 15
+
+
+state 12
+
+    7 expr: expr '=' . expr
+
+    NUM  shift, and go to state 2
+    ID   shift, and go to state 10
+
+    expr  go to state 16
+
+
+state 13
+
+    8 expr: expr '>' . expr
+
+    NUM  shift, and go to state 2
+    ID   shift, and go to state 10
+
+    expr  go to state 17
+
+
+state 14
+
+    3 stmnt: expr ';' .
+
+    $default  reduce using rule 3 (stmnt)
+
+
+state 15
+
+    4 stmnt: LHS expr ';' .
+
+    $default  reduce using rule 4 (stmnt)
+
+
+state 16
+
+    7 expr: expr . '=' expr
+    7     | expr '=' expr .
+    8     | expr . '>' expr
+
+    '='  shift, and go to state 12
+    '>'  shift, and go to state 13
+
+    $default  reduce using rule 7 (expr)
+
+
+state 17
+
+    7 expr: expr . '=' expr
+    8     | expr . '>' expr
+    8     | expr '>' expr .
+
+    $default  reduce using rule 8 (expr)

@@ -1,0 +1,45 @@
+type Rational = struct { int  num, denom; };   /* 分数型の定義 */
+
+Rational SetRat(int N, int D), Add(Rational X, Rational Y);
+void     WriteRat(Rational* p);
+
+void main()
+{
+  Rational A, B, C;                     /* 分数型の変数の宣言 */
+
+  write("A = ", 0); A = SetRat(5, 12); WriteRat(&A);   /* A = 5/12 */
+  write("B = ", 0); B = SetRat(3, 16); WriteRat(&B);   /* B = 3/16 */
+  write("A + B = ", 0); C = Add(A, B); WriteRat(&C);   /* C = A + B */
+}
+ 
+Rational SetRat(int n, int d)           /* 分数型の値 n/d を返す関数 */
+{
+  Rational temp;
+
+  temp.num = n;  temp.denom = d;        /* 分子，分母の値をtempに代入 */
+  return temp;                          /* 分数型の値を返す */
+}
+
+void WriteRat(Rational* X)              /* 分数へのポインタを使って，*/
+{                                       /* 分数の表示を行う関数 */
+  write("%d /", X->num);  write(" %d\n", X->denom);
+}
+
+int GCD(int m, int n) {                 /* 最大公約数を求める関数 */
+  while (1) { int r;
+    r = m % n;                          /* ユークリッドの互除法 */
+    if (r == 0) return n;               /* nの値が最大公約数 */
+    m = n; n = r; }
+}
+
+Rational Add(Rational X, Rational Y)    /* 分数の和を求める関数 */
+{
+  Rational R;
+  int c;
+
+  c = GCD(X.denom, Y.denom);            /* ２つの分母の最大公約数 */
+  R.num = X.num * (Y.denom/c) + Y.num * (X.denom/c);    /* 分子の計算 */
+  R.denom = (X.denom/c) * Y.denom;                      /* 分母の計算 */
+  return R;                             /* X + Y の計算結果を返す */
+}
+

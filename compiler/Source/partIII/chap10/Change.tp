@@ -1,0 +1,55 @@
+int Coins[6];
+
+int ReadData(int & p, int & q);
+void InitCoins(), CompChange(int p, int C[]);
+
+void main()
+{
+  int NoOfCoins[6];
+  int Price, Payment, Change, i;
+
+  InitCoins();
+  while (ReadData(Price, Payment) > 0) {
+    Change = Payment - Price;
+    if (Change > 0) {
+      CompChange(Change, NoOfCoins);
+      write("釣銭は %d 円\n", Change);
+      for (i=0; i<6; i++)
+        if (NoOfCoins[i] > 0) {
+          write("%4d 円硬貨 : ", Coins[i]);
+          write("%4d 枚\n", NoOfCoins[i]);
+        }
+      write("\n"); }
+    else if (Change < 0)
+      write("%d 円不足です\n\n", -Change);
+    else
+      write("ちょうどの支払いです\n\n");
+  }
+}
+
+void InitCoins()
+{
+  Coins[0] = 500;   Coins[1] = 100;  Coins[2] = 50; 
+  Coins[3] = 10;    Coins[4] = 5;    Coins[5] = 1; 
+}
+
+int ReadData(int & p, int & q)
+{
+  write("定価 = ");
+  if (read("%d", p) <= 0) return -1;
+  write("支払 = ");
+  return read("%d", q);
+}
+
+void CompChange(int Rem, int NC[])
+{
+  int i;
+
+  for (i=0; Rem>0; i++) {
+    NC[i] = Rem / Coins[i];
+    Rem = Rem % Coins[i];
+  }
+
+  for ( ; i<6; i++)
+    NC[i] = 0;
+}

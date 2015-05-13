@@ -1,0 +1,29 @@
+void PrintPrime(int M);
+
+void main()
+{
+  int N;
+
+  write("Prime Numbers\n");
+  write("type in the numebr ");
+  read("%d", N);
+  PrintPrime(N);
+}
+
+void PrintPrime(int M)
+{
+  int i, j, n;
+
+  n = 1;
+  if (M >= 2)
+    write("%6d", 2);
+  for (i = 3; i <= M; i = i+2) {
+    for (j = 3; j*j <= i && i % j != 0; j = j+2) ;
+    if (j*j > i) {
+      if (n++ % 10 == 0)
+        write("\n");
+      write("%6d", i);
+    }
+  }
+  write("\n");
+}

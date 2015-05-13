@@ -1,0 +1,24 @@
+int Count;
+
+double Factorial(int n)
+{
+  if (n > 0)
+   return n * Factorial(n-1);
+  else
+   return 1;
+}
+
+void FactList(int i, int N)
+{
+  if (i <= N) {
+    write("%10d  ", i);
+    write("%20.f \n", Factorial(i));
+    FactList(i+1, N);
+  }
+}
+
+void main()
+{
+  Count = 20;
+  FactList(1, Count);
+}

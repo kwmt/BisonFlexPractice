@@ -1,0 +1,97 @@
+char Token;
+int  Lval, ungetc;
+
+int expr(), term(), factor();
+void Scanner();
+
+void main()
+{
+  ungetc = -1;
+
+  write("Welcome to Desc calculator\n");
+  write("input expression, please here\n");
+  Scanner();
+  write("= %d\n", expr());
+}
+
+int expr()
+{
+  char addop;
+  int val;
+
+  val = term();
+  while ((Token == '+') || (Token=='-')) {
+    addop = Token;
+    Scanner();
+    if (addop == '+')
+      val = val + term();
+    else
+      val = val - term();
+  }
+  return val;
+}
+
+int term()
+{
+  char mulop;
+  int val;
+
+  val = factor();
+  while ((Token == '*') || (Token == '/')) {
+    mulop = Token;
+    Scanner();
+    if (mulop == '*')
+      val = val * factor();
+    else
+      val = val / factor();
+  }
+  return val;
+}
+
+int factor()
+{
+  int val;
+
+  val = 0;
+  if (Token == 'n') {
+    val = Lval;
+    Scanner();
+  }
+  else if (Token == '(') {
+    Scanner();
+    val = expr();
+    if (Token == ')')
+      Scanner();
+  }
+  else if (Token == '-') {
+    Scanner();
+    val = -expr();
+  }
+  else
+    write("error in expression\n");
+  return val;
+}
+
+void Scanner()
+{
+  if (ungetc < 0)
+    read("%c", Token);
+  else {
+    Token = ungetc;
+    ungetc = -1;
+  }
+  while (Token == ' ')
+    read("%c", Token);
+  if ((Token >= '0') && (Token <= '9')) {
+    Lval = 0;
+    while ((Token >= '0') && (Token <= '9')) {
+      Lval = Lval * 10 + (Token - '0');
+      read("%c", Token);
+    }
+    ungetc = Token;
+    Token = 'n';
+  }
+}
+
+
+

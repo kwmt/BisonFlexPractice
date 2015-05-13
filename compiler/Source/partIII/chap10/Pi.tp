@@ -1,0 +1,48 @@
+double random();
+
+int LAMBDA, RANCONST;
+double RAN2_32;
+
+int LC;
+
+int Seed;
+
+void main()
+{
+  int i, N, M, CircleC, TotalC;
+  double x, y;
+
+  LAMBDA =   843314861;
+  RANCONST = 453816693;
+  RAN2_32 =  4294967296.0;
+  Seed = 198313;
+
+  CircleC = 0;
+
+  write("How many trials? ");
+  read("%d", N);
+
+  write("What about output count ? ");
+  read("%d", M);
+
+  TotalC = M * N;
+  for (i = 1; i <= TotalC; i++) {
+    x = random(); y = random();
+    if (x*x + y*y <= 1.0)
+      CircleC++;
+    if (i % M == 0) {
+      write("%10d", i);
+      write("%10f\n", 4.0*CircleC/(double)i);
+    }
+  }
+}
+
+double random()
+{
+  double d;
+
+  Seed = LAMBDA * Seed + RANCONST;
+  d = (double)Seed / RAN2_32;
+  if (d < 0) d = d + 1.0;
+  return d;
+}

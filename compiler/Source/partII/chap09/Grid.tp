@@ -1,0 +1,19 @@
+int Xmax, Ymax;
+
+int Search(int x, int y);
+
+void main()
+{
+  read Xmax;
+  read Ymax;
+  write Search(0, 0);
+}
+
+int Search(int X, int Y)
+{
+  if (X > Xmax) return 0;
+  if (Y > Ymax) return 0;
+  if (X == Xmax)
+    if (Y == Ymax) return 1;
+  return Search(X+1, Y) + Search(X, Y+1);
+}

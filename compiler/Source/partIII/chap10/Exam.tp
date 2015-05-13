@@ -1,0 +1,47 @@
+int GetScore(int n, int P[]);
+void WriteScore(int m, int n, int M[][]);
+
+void main()
+{
+  int Score[50][6];
+  int NoOfSbj, NoOfSt;
+
+  NoOfSt = 0;
+  read("%d", NoOfSbj);
+  while (GetScore(NoOfSbj, Score[NoOfSt]) > 0)
+    NoOfSt++;
+  WriteScore(NoOfSt, NoOfSbj, Score);
+}
+
+int GetScore(int NoOfSbj, int ScoreVec[])
+{
+  int sbj, sum;
+
+  sum = 0;
+  for (sbj = 0; sbj < NoOfSbj; sbj++) {
+    if (read("%d", ScoreVec[sbj]) < 1)
+      return -1;
+    sum = sum + ScoreVec[sbj];
+  }
+  ScoreVec[NoOfSbj] = sum;
+  return NoOfSbj;
+}
+
+void WriteScore(int NoOfSt, int NoOfSbj, int M[][6])
+{
+  int st, sbj, Sum[6];
+
+  for (sbj = 0; sbj <= NoOfSbj; sbj++)
+    Sum[sbj] = 0;
+  for (st = 0; st < NoOfSt; st++) {
+    for (sbj = 0; sbj <= NoOfSbj; sbj++) {
+      write("%7d", M[st][sbj]);
+      Sum[sbj] = Sum[sbj] + M[st][sbj];
+    }
+    write("%10.1f\n", (double)M[st][NoOfSbj] / NoOfSbj);
+  }
+  write("\n");
+  for (sbj = 0; sbj <= NoOfSbj; sbj++)
+    write("%7.1f", (double)Sum[sbj] / NoOfSt);
+  write("\n");
+}

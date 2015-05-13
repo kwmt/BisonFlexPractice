@@ -1,0 +1,36 @@
+void QuickSort(int X[], int L, int R);
+void Swap(int & X, int & Y);
+
+void main()
+{
+  int A[100], i, N;
+
+  write("Quick Sort started\n");
+  for (N = 0; read("%d", A[N]) > 0; N++) ;
+  QuickSort(A, 0, N-1);
+  for (i = 0; i < N; i++) {
+    if (i % 10 == 0) write("\n");
+    write("%5d", A[i]); }
+  write("\n");
+}
+
+void QuickSort(int X[], int L, int R)
+{
+  int i, j, x;
+
+  i = L; j = R;
+  x = X[(L + R)/2];
+  while (i < j) {
+    while (X[i] < x) i++;
+    while (x < X[j]) j--;
+    if (i <= j) Swap(X[i++], X[j--]); }
+  if (L < j) QuickSort(X, L, j);
+  if (i < R) QuickSort(X, i, R);
+}
+
+void Swap(int & X, int & Y)
+{
+  int temp;
+
+  temp = X;  X = Y;  Y = temp;
+}

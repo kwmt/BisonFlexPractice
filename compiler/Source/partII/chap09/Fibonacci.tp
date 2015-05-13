@@ -1,0 +1,23 @@
+
+int Fibonacci(int n)
+{
+  if (n < 2)
+    return 1;
+  else
+    return Fibonacci(n-1) + Fibonacci(n-2);
+}
+ 
+void FiboSeq(int i, int N)
+{
+  if (i <= N) {
+    write Fibonacci(i);
+    FiboSeq(i+1, N); }
+}
+ 
+void main()
+{
+  int m;
+
+  read m;
+  FiboSeq(0, m);
+}

@@ -1,0 +1,29 @@
+
+void Print_Array(int X[], int N);
+
+void main()
+{
+  char i;
+  int n, N[100];
+
+  write("Print Array\n");
+ 
+  n = 100;
+  i = 0; 
+  while (i < n)
+    N[i] = ++i;
+  Print_Array(N, n);
+}
+
+void Print_Array(int A[], int n)
+{
+  int p;
+
+  p = 0;
+  while (p < n) {
+    if (p % 5 == 0) write("\n");
+    write("%5d", A[p++]);
+  }
+  write("\n");
+}
+

@@ -1,0 +1,276 @@
+</head>
+
+<body bgcolor="white">
+
+<HR size=5>
+
+<center>
+<h1>「コンパイラ構成法」正誤表</h1>
+2003年7月31日
+</center>
+
+<ul>
+  <li> p.9 下から6行目 <br>
+    「<font color="green"> （cross-co<font color="red">pm</font>iler）と
+いう． </font>」
+ → 「<font color="green"> （cross-co<font color="red">mp</font>iler）と
+いう． </font>」
+
+  <li> p.26 下から9行目 <br>
+    「<font color="green"> 記号を <font color="red">一次</font> 的に
+ </font>」
+ → 「<font color="green"> 記号を <font color="red">一時</font> 的に
+ </font>」
+
+  <li> p.44 表3.1 <br>
+     <font color="green">状態6</font>の<font color="red">S8</font>と<font
+     color="red">S10</font>，<font color="green">状態8</font>の<font
+     color="red">S2</font>，および<font color="green">状態9</font>の
+     <font color="red">S2</font>をそれぞれ左へ1欄移動．
+
+  <li> p.45 下から10行目 <br>
+    「<font color="green"> 状態 <font color="red">3</font> で </font>」
+ → 「<font color="green"> 状態 <font color="red">8</font> で </font>」
+
+  <li> p.45 下から9行目 <br>
+    「<font color="green"> goto[ <font color="red">3</font> , 項] = 11
+ </font>」
+ → 「<font color="green"> goto[ <font color="red">8</font> , 項] = 11
+ </font>」
+
+  <li> p.48 下から5行目 <br>
+    「<font color="green"> ＋項，＋／<font color="red">＄</font>]と表す．
+ </font>」
+ → 「<font color="green"> ＋項，＋／<font color="red">\ｎ</font>]と表す．
+ </font>」
+
+  <li> p.57 下から12行目 <br>
+    「<font color="red">したがって 場合，</font><font color="green"> Pascalに
+    おける </font>」
+ → 「<font color="green"> Pascalにおける </font>」
+
+  <li> p.73（プログラム5.2，行10）&nbsp <font color=#988830> &nbsp マクロ other
+ の定義中のピリオドの抜け落ち </font> </br>
+「<font color="green"> 10 &nbsp other </font> &nbsp &nbsp &nbsp &nbsp &nbsp
+ &nbsp &nbsp &nbsp」
+ → 「<font color="green"> 10 &nbsp other </font>
+ &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+ </strong><font color="red"><strong>.</strong></font> &nbsp」 <br>
+ p.75の下から6行目，p.103（プログラム6.3）の行9，p.128（プログラム7.5）の
+行13，p.306（プログラム13.4）の行17も同様．
+
+  <li> p.92 図6.1（VSMの構成）&nbsp <font color=#988830> フレームレジスタ
+（Freg）の内容は，データセグメントへのポインタ（矢印付きの線の変更）．<br>
+命令セグメントの最終アドレス </font>
+  「<font color="red"> DSEG</font><font color="green">_SIZE-1</font> 」
+ → 「<font color="red"> ISEG</font><font color="green">_SIZE-1</font>」
+
+  <li> p.92 下から3行目 <br>
+     「<font color="red"> SPと同様に，Stack中の要素 </font>
+ <font color="green"> を指すレジスタ </font>」
+ → 「<font color="red"> Dseg中の領域 </font> <font color="green"> を指す
+レジスタ </font>」
+
+  <li> p.111 行98, 101 <br>
+    関数の呼出し 「<font color="red"> yyerror <font color="green">(...)
+</font> </font>」 →
+ 「<font color="red"> printf <font color="green">(...) </font></font>」
+
+  <li> p.117 表7.1，p.171 表9.1 <br> <font color=#988830>＝</font>の行の
+<font color=#988830>トークン</font>の欄 &nbsp
+ 「<font color="red"> ASSGN </font>」 → 「<font color="red"> '=' </font>」<br>
+
+前置演算子 <font color=#988830>＋＋，−−</font>の行の<font color=#988830>
+結合性</font>の欄 &nbsp
+ 「<font color="red"> 左 </font>」 → 「<font color="red"> 右 </font>」<br>
+
+後置演算子 <font color=#988830>＋＋，−−</font>の行の<font color=#988830>
+結合性</font>の欄 &nbsp
+ 「<font color="red"> 右 </font>」 → 「<font color="red"> 左 </font>」
+
+  <li> p.120 上から2行目 <br>
+    「<font color="green"> （IDentifi<font color="red">l</font>er） </font>」
+ → 「<font color="green"> （IDentifier） </font>」
+
+  <li> p.128 プログラム7.3 &nbsp 行28〜33 <br>
+ 「<font color="red"> LT </font>」 → 「<font color="red"> BLT </font>」
+ 「<font color="red"> LE </font>」 → 「<font color="red"> BLE </font>」
+ 「<font color="red"> EQ </font>」 → 「<font color="red"> BEQ </font>」
+ 「<font color="red"> NE </font>」 → 「<font color="red"> BNE </font>」
+ 「<font color="red"> GE </font>」 → 「<font color="red"> BGE </font>」
+ 「<font color="red"> GT </font>」 → 「<font color="red"> BGT </font>」
+
+  <li> p.136 下から1行目 <br>
+     「<font color="red"> Dseg </font> <font color="green"> にロード
+ </font>」
+    → 「<font color="red"> Iseg </font> <font color="green"> にロード
+ </font>」
+
+  <li> p.138 下から11, 12行目 <br>
+    「<font color="green"> ラベル<font color="red">の次</font>には，
+ </font>」
+ → 「<font color="green"> ラベル<font color="red">定義</font>には，
+ </font>」
+
+  <li> p.144 上から3行目 <br> <font family="courier">
+     「<font color="green"><strong> else </strong>までの解析</font>」
+ → 「<font color="green"><strong> else </strong> <font color="red">の直前
+    </font>までの解析</font>」</font>
+
+  <li> p.147 プログラム8.1 &nbsp 行22の次の行 <br> <font family="courier">
+     「<font color="green">プログラム</font> <font color="red">6.1</font>」
+ → 「<font color="green">プログラム</font> <font color="red">7.1</font>」
+     </font>
+
+  <li> p.155 下から14行目 <br>
+     「<font color="green">行 <font color="red">30</font> のfor文</font>」 →
+ 「<font color="green"> 行 <font color="red">29</font> のfor文</font>」
+
+  <li> p.168 上から2行目： <font color=#988830> 次の文を削除． </font> <br>
+    「<font color="red"> 同時に，MaxFSZ を更新する．</font>」
+
+  <li> p.168 上から7行目： <font color=#988830> 同９行目の文をここに移す．
+ </font> <br>
+    → 「<font color="green">7. 関数定義が終わるとき（EndFdecl）： </font>
+ <font color="red"> 関数定義の有効範囲を閉じるために ... </font> 」 <br>
+  p.184上から13〜15行目<font color=#988830> も同様に処理の記述順序を入れ
+  替える．</font>
+
+  <li> p.181 下から3行目 <br> <font family="courier">
+     「<font color="green"> 引数 <font color="red">Name</font> によって，
+</font>」 → 「<font color="green"> 引数 <font color="red">Fname</font> に
+よって，</font>」 </font>
+
+  <li> p.217 プログラム10.5 行110： <font color=#988830> 次の式文を削除
+（p->loc には，q->logと同じ値がすでに格納されている）．</font> <br>
+     「<font color="red"> p->loc = q->loc; </font>」 <br>
+<font color=#988830> この変更にともなって， </font>
+ p.218 <font color=#988830> の最後の4つの行を削除．</font> <br>
+
+  <li> p.279 下から11行目 <br>
+「<font color="green">20 <font color="red"> 　｜ </font>
+ if_part</font> ... 」
+ → 「<font color="green"> 20 &nbsp <font color="red"> if_stmnt ：
+ </font> &nbsp if_part </font> ... 」
+
+  <li> p.280 上から6行目 <br>
+    「<font color="green">24 &nbsp <font color="red"> 　｜ </font>
+  WHILE </font> ... 」
+ → 「<font color="green"> 24 &nbsp <font color="red"> while_st ：
+ </font> &nbsp WHILE </font> ... 」<br>
+
+  <li> p.291 上から14行目 <br>
+    「<font color="green">→ は<font color="red">左</font>結合性をもつ．
+</font>」→
+     「<font color="green">→は<font color="red">右</font>結合性をもつ．
+</font>」<br>
+    「<font color="red">（<font color="green">Ｆ1→Ｆ2</font>）
+<font color="green">→Ｆ3 </font></font>」→
+    「<font color="green">Ｆ1→</font><font color="red">（
+<font color="green">Ｆ2→Ｆ3</font>）</font>」<br>
+
+  <li> p.313（プログラム13.5，行198と200） &nbsp <font color=#988830>
+ 両者のコメントを入れ替える．</font> p.315 <font color=#988830> のそれらの
+引用も同様．</font>
+
+  <li> p.315 上から17行目 <br>
+    「<font color="red">VAR</font> <font color="green"> が構造体の場合，
+</font>」
+ → 「<font color="red">Var</font> <font color="green"> が構造体の場合，
+</font>」
+
+  <li> p.331 下から4行目 <br>
+    「<font color="green"> 出入口コード </font>」 →
+    「<font color="green"> 出入口 <font color="red">の</font> コード
+      </font>」
+
+  <li> p.331 下から1行目 <br>
+    「<font color="green"> 相対アドレス（4, <font color="red">8</font>）
+</font>」
+→  「<font color="green"> 相対アドレス（4, <font color="red">12</font>）
+</font>」
+
+  <li> p.340 下から9行目 <br>
+    「<font color="green"> GenNewDel(int <font color="red">OP</font>,
+NP tree)</font>」
+→  「<font color="green"> GenNewDel(int <font color="red">Op</font>,
+NP tree)</font>」
+
+  </li>
+</ul>
+
+<center>
+<A HREF="Errata.dvi">DVIファイル(Errata.dvi)</A><br>
+<A HREF="Errata.ps.gz">PSファイル(Errata.ps.gz)</A><br>
+</center>
+<br>
+
+<HR size=5>
+
+<DIV align="right">
+  [<A HREF="../index.html">BACK TO INDEX</A>]
+</DIV>
+
+</body>
+
+<SCRIPT language="Javascript">
+<!--
+
+// FILE ARCHIVED ON 20050502170057 AND RETRIEVED FROM THE
+// INTERNET ARCHIVE ON 20070711103841.
+// JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+// ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+// SECTION 108(a)(3)).
+
+   var sWayBackCGI = "http://web.archive.org/web/20050502170057/";
+
+   function xResolveUrl(url) {
+      var image = new Image();
+      image.src = url;
+      return image.src;
+   }
+   function xLateUrl(aCollection, sProp) {
+      var i = 0;
+      for(i = 0; i < aCollection.length; i++) {
+         if (typeof(aCollection[i][sProp]) == "string") { 
+          if (aCollection[i][sProp].indexOf("mailto:") == -1 &&
+             aCollection[i][sProp].indexOf("javascript:") == -1) {
+            if(aCollection[i][sProp].indexOf("http") == 0) {
+                aCollection[i][sProp] = sWayBackCGI + aCollection[i][sProp];
+            } else {
+                aCollection[i][sProp] = sWayBackCGI + xResolveUrl(aCollection[i][sProp]);
+            }
+         }
+         }
+      }
+   }
+
+   xLateUrl(document.getElementsByTagName("IMG"),"src");
+   xLateUrl(document.getElementsByTagName("A"),"href");
+   xLateUrl(document.getElementsByTagName("AREA"),"href");
+   xLateUrl(document.getElementsByTagName("OBJECT"),"codebase");
+   xLateUrl(document.getElementsByTagName("OBJECT"),"data");
+   xLateUrl(document.getElementsByTagName("APPLET"),"codebase");
+   xLateUrl(document.getElementsByTagName("APPLET"),"archive");
+   xLateUrl(document.getElementsByTagName("EMBED"),"src");
+   xLateUrl(document.getElementsByTagName("BODY"),"background");
+   var forms = document.getElementsByTagName("FORM");
+   if (forms) {
+       var j = 0;
+       for (j = 0; j < forms.length; j++) {
+              f = forms[j];
+              if (typeof(f.action)  == "string") {
+                 if(typeof(f.method)  == "string") {
+                     if(typeof(f.method) != "post") {
+                        f.action = sWayBackCGI + f.action;
+                     }
+                  }
+              }
+        }
+    }
+
+
+//-->
+</SCRIPT>
+
+</html>

@@ -1,0 +1,27 @@
+double root(double x);
+
+void main()
+{
+  int N;
+
+  write("Square Root Computation by Newton's method\n");
+  while (read("%d", N) > 0) {
+    write("root of %d is ", N);
+    write("%f\n", root(N));
+  }
+}
+
+double root(double A)
+{
+  double r, r_new, error;
+
+  r_new = 1;
+  do {
+    r = r_new;
+    r_new = 0.5*(r + A/r);
+    error = (r - r_new) / r_new;
+    if (error < 0)
+      error = -error;
+  } while (error > 1.0E-6);
+  return r_new;
+}

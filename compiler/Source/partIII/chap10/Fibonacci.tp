@@ -1,0 +1,27 @@
+int Fibonacci(int n)
+{
+  if (n < 2)
+    return 1;
+  else 
+    return Fibonacci(n-1) + Fibonacci(n-2);
+}
+
+void FiboSeq(int i, int N)
+{
+  if (i <= N) {
+    write("F(%2d) =", i);
+    write("%10d\n", Fibonacci(i));
+    FiboSeq(i+1, N);
+  }
+}
+
+void main()
+{
+  int A;
+
+  write("Fibonacci Sequence upto N\n");
+  write("Type in number of factors: ");
+  read("%d", A);
+  FiboSeq(0, A);
+}
+

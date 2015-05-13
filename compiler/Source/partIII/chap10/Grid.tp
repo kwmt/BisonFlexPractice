@@ -1,0 +1,26 @@
+int Xmax, Ymax;
+
+int Search(int x, int y);
+
+void main()
+{
+  int CountRoute;
+
+  write("Number of paths on a grid\n");
+  read("%d", Xmax);
+  read("%d", Ymax);
+  CountRoute = Search(0, 0);
+  write("%d\n", CountRoute);
+}
+
+int Search(int X, int Y)
+{
+  if ((X > Xmax) || (Y > Ymax)) {
+    return 0;
+  }
+  if ((X == Xmax) && (Y == Ymax)) {
+    return 1;
+  }
+  return Search(X+1, Y) + Search(X, Y+1);
+}
+

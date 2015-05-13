@@ -1,0 +1,308 @@
+<html>
+<head>
+<BASE HREF="http://www.hara.cs.keio.ac.jp/kCompiler/Slist.html">
+
+  <META http-equiv="Content-Type" content="text/html; charset=ISO-2022-JP">
+  <LINK REV=MADE HREF="mailto:harada@cs.keio.ac.jp">
+  <title>Compiler Construction</title>
+</head>
+
+<body bgcolor="white">
+
+<HR size=5>
+
+<center>
+<h1> ソースコードのダウンロード </h1>
+</center>
+
+<font color=#988830>
+ 本書のプログラムのリストを，次に示す２レベルのディレクトリ構造（部と章）で
+公開します．
+ 本書のmekefileで仮定している構造とは異なりますので，ご注意ください．
+たとえば，第II部では，VSMのヘッダファイルとシミュレータ本体を ６〜９章の
+各コンパイラで共通に使用しますので，それらをまとめて，部レベルのディレクトリ
+に格納してあります．ここに含まれる各makefileは，このファイル構造をもとに
+定義してあります．
+</font>
+
+<HR size=5>
+
+<table border="0">
+<tr>
+  <th align="center" width="600" bgcolor=#0000e0>
+    <font color="white"> Last Update : March 18, 1999 </font>
+  </th>
+</tr>
+</table>
+
+<ul>
+ <li> 第<strong>I</strong>部 ：
+     【<A HREF="./Source/PartI.tar.gz">第I部の全ソース PartI.tar.gz</A>】
+   <ul>
+     <li> ２章： <font color="green"> 構文解析とYacc </font> <br>
+                <A HREF="./Source/PartI/Chap02/prog2-1.y"> プログラム2.1
+                </A> ，
+                <A HREF="./Source/PartI/Chap02/prog2-2.y"> プログラム2.2
+                </A>
+     </li> 
+     <li> ３章： <font color="green"> 簡単なYaccプログラム </font> <br>
+                <A HREF="./Source/PartI/Chap03/prog3-1.y"> プログラム3.1
+                </A>，
+                <A HREF="./Source/PartI/Chap03/prog3-2.y"> プログラム3.2
+                </A>
+     </li> 
+     <li> ４章： <font color="green"> 演算子の優先順位と結合性 </font> <br>
+                <A HREF="./Source/PartI/Chap04/prog4-1.y"> プログラム4.1
+                </A>，
+                <A HREF="./Source/PartI/Chap04/prog4-2.y"> プログラム4.2
+                </A>
+     </li>
+     <li> ５章： <font color="green"> 字句解析とLex </font> <br>
+                <A HREF="./Source/PartI/Chap05/prog5-1.y"> プログラム5.1
+                </A>，
+                <A HREF="./Source/PartI/Chap05/prog5-2.l"> プログラム5.2
+                </A>，
+                <A HREF="./Source/PartI/Chap05/prog5-3.y"> プログラム5.3
+                </A>，<br>
+                <A HREF="./Source/PartI/Chap05/prog5-4.l"> プログラム5.3用の
+                   Lexプログラム </A>
+     </li>
+   </ul>
+ </li>
+ <br>
+ <li> 第<strong>II</strong>部 ：
+     【<A HREF="./Source/PartII.tar.gz">第II部の全ソース PartII.tar.gz</A>】
+   <ul>
+     <li> VSMシミュレータ： <br>
+          <A HREF="./Source/PartII/VSM.h">
+           VSM.h（プログラム6.1） </A> ，
+          <A HREF="./Source/PartII/VSM.c">
+           VSM.h（プログラム6.4） </A>
+     </li>
+     <li> main()とyyerror()： <A HREF="./Source/PartII/MainFunc.c">
+                            MainFunc.c（プログラム7.5） </A>
+
+     </li>
+     <li> 名前表の管理： <A HREF="./Source/PartII/NameTable.c">
+                            NameTable.c（プログラム7.4） </A>
+     </li>
+     <li> ６章： <font color="green"> 仮想マシンと簡単な式の翻訳 </font> <br>
+                <A HREF="./Source/PartII/Chap06/CalcL.y">
+                         CalcL.y（プログラム6.2） </A> ，
+                <A HREF="./Source/PartII/Chap06/CalcL.l">
+                         CalcL.l（プログラム6.3） </A> ，
+                <A HREF="./Source/PartII/Chap06/makefile"> makefile </A> 
+     </li>
+     <li> ７章： <font color="green"> 簡単な宣言と式文の翻訳 </font> <br>
+                <A HREF="./Source/PartII/Chap07/ExprL.y">
+                         ExprL.y（プログラム7.1） </A> ，
+                <A HREF="./Source/PartII/Chap07/ExprL.l">
+                         ExprL.l（Lexプログラム） </A> ，<br>
+                <A HREF="./Source/PartII/Chap07/SymTable.c">
+                         SymTable.c（プログラム7.2） </A> ，
+                <A HREF="./Source/PartII/Chap07/makefile"> makefile </A> ，
+                <A HREF="./Source/PartII/Chap07/Sample.tp">
+                         Sample.tp（例） </A> 
+     </li>
+     <li> ８章： <font color="green"> 制御文の翻訳 </font> <br>
+                <A HREF="./Source/PartII/Chap08/CntrlL.y">
+                         CntrlL.y（プログラム8.1） </A> ，
+                <A HREF="./Source/PartII/Chap08/CntrlL.l">
+                         CntrlL.l（Lexプログラム） </A> ，<br>
+                <A HREF="./Source/PartII/Chap08/JumpChain.c">
+                         JumpChain.c（プログラム8.2） </A> ，
+                <A HREF="./Source/PartII/Chap08/LabelDef.c">
+                         LabelDef.c（プログラム8.3） </A> ，<br>
+                <A HREF="./Source/PartII/Chap08/SymTable.c">
+                         SymTable.c（プログラム7.2） </A> ，
+                <A HREF="./Source/PartII/Chap08/makefile"> makefile </A>  ，
+                <A HREF="./Source/PartII/Chap08/Sample.tp">
+                         Sample.tp（例） </A> 
+     </li>
+     <li> ９章： <font color="green"> 関数定義と関数呼出しの翻訳 </font> <br>
+                <A HREF="./Source/PartII/Chap09/FuncL.y">
+                         FuncL.y（プログラム9.2） </A> ，
+                <A HREF="./Source/PartII/Chap09/FuncL.l">
+                         FuncL.l（Lexプログラム） </A> ，<br>
+                <A HREF="./Source/PartII/Chap09/SymTable.h">
+                         SymTable.h（プログラム9.1） </A> ，
+                <A HREF="./Source/PartII/Chap09/SymTable.c">
+                         SymTable.c（プログラム9.3） </A> ，<br>
+                <A HREF="./Source/PartII/Chap09/makefile"> makefile </A> ，
+                <A HREF="./Source/PartII/Chap09/Factorial.tp">
+                         Factorial.tp（例） </A> ，
+                <A HREF="./Source/PartII/Chap09/Fibonacci.tp">
+                         Fibonacci.tp（例） </A> ，<br>
+                <A HREF="./Source/PartII/Chap09/Grid.tp">
+                         Grid.tp（例） </A>
+     </li>
+   </ul>
+ </li>
+ <br>
+ <li> 第<strong>III</strong>部 ：
+     【<A HREF="./Source/PartIII.tar.gz">第III部の全ソース PartIII.tar.gz</A>】
+    <ul>
+     <li> VSM-Eシミュレータ： <br>
+          <A HREF="./Source/PartIII/VSME.h">
+           VSM.h（プログラム10.1） </A> ，
+          <A HREF="./Source/PartIII/VSME.c">
+           VSM.c（プログラム12.2） </A>
+     </li>
+     <li> main()とyyerror()： <A HREF="./Source/PartII/MainFunc.c">
+                            MainFunc.c（プログラム7.5） </A>
+     </li>
+     <li> 名前表の管理： <A HREF="./Source/PartII/NameTable.c">
+                            NameTable.c（プログラム7.4） </A>
+     </li>
+     <li> １０〜１２章： <font color="green"> 基本的なプログラミング言語
+       </font> <br>
+                <A HREF="./Source/PartIII/Chap10/MiniL.y">
+                         MiniL.y（プログラム10.3，11.3） </A> ，
+                <A HREF="./Source/PartIII/Chap10/MiniL.l">
+                         MiniL.l（プログラム10.4） </A> ，<br>
+                <A HREF="./Source/PartIII/Chap10/SymTable.h">
+                         SymTable.h（プログラム10.2） </A> ，
+                <A HREF="./Source/PartIII/Chap10/SymTable.c">
+                         SymTable.c（プログラム10.5） </A> ，<br>
+                <A HREF="./Source/PartIII/Chap10/ExprTree.h">
+                         ExprTree.h（プログラム11.1） </A> ，
+                <A HREF="./Source/PartIII/Chap10/ExprTree.c">
+                         ExprTree.c（プログラム11.4） </A> ，<br>
+                <A HREF="./Source/PartIII/Chap10/CodeGen.h">
+                         CodeGen.h（プログラム11.2） </A> ，
+                <A HREF="./Source/PartIII/Chap10/CodeGen.c">
+                         CodeGen1.c（プログラム12.1） </A> ，<br>
+                <A HREF="./Source/PartIII/Chap10/makefile"> makefile </A> ，
+                <A HREF="./Source/PartIII/Chap10/Binsearch.tp">
+                         Binsearch.tp（例） </A> ，<br>
+                <A HREF="./Source/PartIII/Chap10/Calc.tp">
+                         Calc.tp（例） </A> ，
+                <A HREF="./Source/PartIII/Chap10/Change.tp">
+                         Change.tp（例） </A> ，
+                <A HREF="./Source/PartIII/Chap10/CharFreq.tp">
+                         CharFreq.tp（例） </A> ， <br>
+                <A HREF="./Source/PartIII/Chap10/Exam.tp">
+                         Exam.tp（例） </A> ，
+                <A HREF="./Source/PartIII/Chap10/Exam.dat">
+                         Exam.dat（テストデータ） </A> ， <br>
+                <A HREF="./Source/PartIII/Chap10/Factorial.tp">
+                         Factorial.tp（例） </A> ，
+                <A HREF="./Source/PartIII/Chap10/Fibonacci.tp">
+                         Fibonacci.tp（例） </A> ，
+                <A HREF="./Source/PartIII/Chap10/Grid.tp">
+                         Grid.tp（例） </A> ， <br>
+                <A HREF="./Source/PartIII/Chap10/Pi.tp">
+                         Pi.tp（例） </A> ，
+                <A HREF="./Source/PartIII/Chap10/PrimNum.tp">
+                         PrimNum.tp（例） </A> ，
+                <A HREF="./Source/PartIII/Chap10/PrintArray.tp">
+                         PrintArray.tp（例） </A> ， <br>
+                <A HREF="./Source/PartIII/Chap10/Qsort.tp">
+                         Qsort.tp（例） </A> ，
+                <A HREF="./Source/PartIII/Chap10/Sqrt.tp">
+                         Sqrt.tp（例） </A> ，
+     </li>
+     <li> １３，１４章： <font color="green"> 型定義の処理 </font> <br>
+MiniLコンパイラと同様に，中間表現を出力するオプション（d）と，識別子の宣言と
+定義（型式の表示を含む）に関する属性を表示するオプション（s）が働くように
+してあります．<br>
+                <A HREF="./Source/PartIII/Chap13/TypeL.y">
+                         TypeL.y（プログラム13.3，14.2） </A> ，
+                <A HREF="./Source/PartIII/Chap13/TypeL.l">
+                         TypeL.l（プログラム13.4） </A> ，<br>
+                <A HREF="./Source/PartIII/Chap13/SymTable.h">
+                         SymTable.h（プログラム13.1） </A> ，
+                <A HREF="./Source/PartIII/Chap13/SymTable.c">
+                         SymTable.c（プログラム13.5） </A> ，<br>
+                <A HREF="./Source/PartIII/Chap13/TypeDef.h">
+                         TypeDef.h（プログラム13.2） </A> ，
+                <A HREF="./Source/PartIII/Chap13/TypeDef.c">
+                         TypeDef.c（プログラム13.6） </A> ， <br>
+                <A HREF="./Source/PartIII/Chap13/ExprTree.h">
+                         ExprTree.h（プログラム14.1） </A> ，
+                <A HREF="./Source/PartIII/Chap13/ExprTree.c">
+                         ExprTree.c（プログラム14.3） </A> ，<br>
+                <A HREF="./Source/PartIII/Chap13/CodeGen.c">
+                         CodeGen.c（プログラム14.4） </A> ，
+                <A HREF="./Source/PartIII/Chap13/makefile"> makefile </A> ，
+<br>
+                <A HREF="./Source/PartIII/Chap13/RatAdd.tp">
+                         RatAdd.tp（例） </A>
+    </li>
+    </ul>
+  </li>
+</ul>
+
+<HR size=5>
+
+<DIV align="right">
+  [<A HREF="index.html">BACK TO INDEX</A>]
+</DIV>
+
+</body>
+
+<!-- SOME LINK HREF'S ON THIS PAGE HAVE BEEN REWRITTEN BY THE WAYBACK MACHINE
+OF THE INTERNET ARCHIVE IN ORDER TO PRESERVE THE TEMPORAL INTEGRITY OF THE SESSION. -->
+
+
+<SCRIPT language="Javascript">
+<!--
+
+// FILE ARCHIVED ON 20050831200903 AND RETRIEVED FROM THE
+// INTERNET ARCHIVE ON 20070710222817.
+// JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+// ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+// SECTION 108(a)(3)).
+
+   var sWayBackCGI = "http://web.archive.org/web/20050831200903/";
+
+   function xResolveUrl(url) {
+      var image = new Image();
+      image.src = url;
+      return image.src;
+   }
+   function xLateUrl(aCollection, sProp) {
+      var i = 0;
+      for(i = 0; i < aCollection.length; i++) {
+         if (typeof(aCollection[i][sProp]) == "string") { 
+          if (aCollection[i][sProp].indexOf("mailto:") == -1 &&
+             aCollection[i][sProp].indexOf("javascript:") == -1) {
+            if(aCollection[i][sProp].indexOf("http") == 0) {
+                aCollection[i][sProp] = sWayBackCGI + aCollection[i][sProp];
+            } else {
+                aCollection[i][sProp] = sWayBackCGI + xResolveUrl(aCollection[i][sProp]);
+            }
+         }
+         }
+      }
+   }
+
+   xLateUrl(document.getElementsByTagName("IMG"),"src");
+   xLateUrl(document.getElementsByTagName("A"),"href");
+   xLateUrl(document.getElementsByTagName("AREA"),"href");
+   xLateUrl(document.getElementsByTagName("OBJECT"),"codebase");
+   xLateUrl(document.getElementsByTagName("OBJECT"),"data");
+   xLateUrl(document.getElementsByTagName("APPLET"),"codebase");
+   xLateUrl(document.getElementsByTagName("APPLET"),"archive");
+   xLateUrl(document.getElementsByTagName("EMBED"),"src");
+   xLateUrl(document.getElementsByTagName("BODY"),"background");
+   var forms = document.getElementsByTagName("FORM");
+   if (forms) {
+       var j = 0;
+       for (j = 0; j < forms.length; j++) {
+              f = forms[j];
+              if (typeof(f.action)  == "string") {
+                 if(typeof(f.method)  == "string") {
+                     if(typeof(f.method) != "post") {
+                        f.action = sWayBackCGI + f.action;
+                     }
+                  }
+              }
+        }
+    }
+
+
+//-->
+</SCRIPT>
+
+</html>

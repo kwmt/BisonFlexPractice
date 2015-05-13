@@ -1,0 +1,9 @@
+int N, Sum, SqSum;
+
+read N;
+Sum = N*(N+1)/2;
+write Sum;
+
+SqSum = N*(N+1)*(2*N+1)/6;
+write SqSum;
+

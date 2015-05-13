@@ -1,0 +1,14 @@
+int N, i, j;
+
+{
+  read N;
+
+  if (N >= 2)
+    write(2);
+  for (i = 3; i <= N; i++) {
+    if ((i % 2) == 0) continue;
+    for (j = 3; j*j <= i; j = j+2)
+      if (i % j == 0) break;
+    if (j*j > i) write i;
+  }
+}

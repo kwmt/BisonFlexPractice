@@ -1,0 +1,18 @@
+int Factorial(int n);
+
+void main()
+{
+  int A;
+
+  read A;
+  write Factorial(A);
+}
+
+int Factorial(int n)
+{
+  if (n > 0)
+    return n * Factorial(n-1);
+  else
+    return 1;
+}
+
